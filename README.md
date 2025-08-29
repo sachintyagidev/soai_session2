@@ -28,6 +28,29 @@ A Flask-based single page application for measuring and comparing inference time
 
 ## 🛠️ Installation
 
+### Option 1: Using UV (Recommended)
+
+1. **Install UV** (if not already installed):
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+2. **Clone or download** the project files
+
+3. **Install dependencies with UV**:
+   ```bash
+   uv sync
+   ```
+
+4. **Run the application**:
+   ```bash
+   uv run python app.py
+   ```
+
+5. **Open your browser** and go to `http://localhost:5001`
+
+### Option 2: Using pip
+
 1. **Clone or download** the project files
 2. **Install dependencies**:
    ```bash
@@ -82,6 +105,11 @@ A Flask-based single page application for measuring and comparing inference time
 - **API Endpoints**: RESTful endpoints for training and profiling
 - **Threading**: Non-blocking model training
 
+### Package Management
+- **UV Support**: Fast dependency resolution and installation
+- **pyproject.toml**: Modern Python project configuration
+- **Development Tools**: Optional dev dependencies for testing and linting
+
 ### Frontend (HTML/CSS/JavaScript)
 - **Responsive Design**: Works on desktop and mobile
 - **Chart.js Integration**: Interactive data visualization
@@ -99,6 +127,48 @@ A Flask-based single page application for measuring and comparing inference time
 1. Add model configuration in `train_models()` function
 2. Include model class, description, and color
 3. Models will automatically appear in the UI
+
+## 🛠️ Development
+
+### Setting up Development Environment
+
+1. **Install UV** (if not already installed):
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+2. **Install with development dependencies**:
+   ```bash
+   uv sync --extra dev
+   ```
+
+3. **Run tests**:
+   ```bash
+   uv run pytest
+   ```
+
+4. **Format code**:
+   ```bash
+   uv run black .
+   ```
+
+5. **Lint code**:
+   ```bash
+   uv run flake8 .
+   ```
+
+6. **Type checking**:
+   ```bash
+   uv run mypy .
+   ```
+
+### UV Commands
+
+- **Install dependencies**: `uv sync`
+- **Add new dependency**: `uv add package-name`
+- **Add dev dependency**: `uv add --dev package-name`
+- **Run with virtual environment**: `uv run python app.py`
+- **Update dependencies**: `uv lock --upgrade`
 
 ### Modifying Test Parameters
 - Change `num_runs` in the UI for different precision
